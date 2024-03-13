@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Jobs</title>
+    <script defer src="alljobs.js"></script>
+    <style>
+        a{
+          text-decoration: none;
+          color: black;
+        }
+
+        .Home-page{
+          display: flex;
+          background-color: rgb(0, 106, 255);
+          align-items: center;
+          flex-direction: column;
+          color: white;
+          height: 70vh;
+        }
+        .card-title{
+          height: 80px;
+          text-align: center;
+        }
+        .list-group-item{
+          height: 80px;
+        }
+        .container{
+            display: flex;
+            margin-top: 5%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+        }
+        .overflow-auto{
+            height: 150px;
+        }
+
+        .card-img-top{
+            height: 100px;
+            width: 100px;
+        }
+
+        .menu-but{
+         height: 30px;
+         background-color: rgba(0, 140, 255, 0.523);
+         color: white;
+         border: none;
+        }
+
+        #card-body{
+          display: flex;
+          justify-content: space-between;
+
+        }
+
+        .card-but{
+          background-color: rgba(51, 21, 249, 0.799);
+          color: white;
+          border: none;
+          place-self: space-between;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary" style="height: 15%;">
+            <div class="container-fluid" style="background-color: blue;">
+              <a class="navbar-brand" style="color: white;">Jubs</a>
+              <div class="menu">
+                <button class="menu-but" onclick="build_home()">Home Page</button>
+                <button class="menu-but"  onclick="getAPI()">See all Jobs</button>
+                <select name="choose-category" class="menu-but" id="category-nav" onchange="getAPICategory()">
+                  <option value="home">Search by Category</option>
+                </select>
+                <button class="menu-but" onclick="buildCards(favorites, 'Favorites')">My favorite Jobs ❤</button>
+            </div>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search by " aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" style="color: white;">Search</button>
+              </form>
+            </div>
+          </nav>
+    </header>
+    </div>
+    <h3 id="head-page"></h3>
+    <div class="container" style="display: block; width: 100%; height: 100%;">
+    </div>
+    <div class="loading" style="position: fixed; height: 100%; width: 100%; display: none; align-items: center; justify-content: center;">
+      <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+        <span role="status">It's will take a bit time...</span>
+      </button>
+      </div>
+</body>
+</html>
